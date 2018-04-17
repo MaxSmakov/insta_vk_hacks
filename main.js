@@ -22,3 +22,24 @@ var cancel_invites = setTimeout (function cancel() {
 javascript:var cancel_invites=setTimeout(function cancel(){var a=document.querySelector("#groups_invites_wrap .group_list_row");if(a){var b=a.querySelector(".group_row_buttons .button_light");b&&b.click();a.parentElement.removeChild(a)}else clearTimeout(cancel_invites);document.querySelector("#ui_invites_load_more")&&document.querySelector("#ui_invites_load_more").click();cancel_invites=setTimeout(cancel,400)},400);
 
 //END
+
+// START
+// Description:
+// Прокрутка страницы до самого низа с учетом подгрузки с сервера. Так же есть функция прокрутки до верха.
+// Usage:
+// Можно использовать, например во Вконтакте: на странице пользователя прокрутить его стену до самого низа.
+
+var timerId = setTimeout(function tick() {
+  var new_scroll_top = document.documentElement.scrollTop;            	
+  window.scrollTo(0, document.documentElement.scrollHeight);
+  if (document.documentElement.scrollTop == new_scroll_top) {
+  	clearTimeout(timerId);
+  } else {
+  	timerId = setTimeout(tick, 500);
+  }
+}, 500);
+
+// прокрутка до самого верха страницы:
+window.scrollTo(0, 0);
+
+//END
