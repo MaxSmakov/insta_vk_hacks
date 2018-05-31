@@ -45,22 +45,23 @@ window.scrollTo(0, 0);
 
 //END
 
-// START
+// START (Обновлено 31.05.2018)
 // Description:
 // Instagram. Ставим лайки всем подряд в ленте новостей (версия браузера естесственно)
+// Лайкает только то, что еще не прогружено браузером (типа остальное можно вручную лайкнуть - несколько фоток).
 // Usage:
 // открываем консоль (F12->console) и вставляем следующий код:
 
 var n = 0;
 var k = 0;
 var timerId = setTimeout (function like(){
-	var len = document.querySelectorAll('._l9yih').length;
-	if ( document.querySelectorAll('._l9yih span')[len - 1].innerHTML == "Нравится") {
-		document.querySelectorAll('._l9yih')[len - 1].click();
+	var len = document.querySelectorAll('.ptsdu').length;
+	if ( document.querySelectorAll('.ptsdu')[len - 1] ) {
+		document.querySelectorAll('.ptsdu')[len - 1].click();
 	}
 	window.scrollTo(0, n += 1000);
 	k++;
-	if (k > 30) { //не более 60 лайков в час, а то блокировка
+	if (k > 10) { //не более 60 лайков в час, а то блокировка
 		clearTimeout(timerId);
 	} else {
 	timerId = setTimeout (like, 500);
@@ -69,7 +70,7 @@ var timerId = setTimeout (function like(){
 
 //END
 
-// START
+// START (Обновлено 31.05.2018)
 // Description:
 // Instagram. Жестко лайкаем чью-нить страничку.
 // Usage:
