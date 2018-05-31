@@ -77,22 +77,22 @@ var timerId = setTimeout (function like(){
 
  var k = 0;
  var timerId = setTimeout (function like() {	
-	if (k > 50 || (!document.querySelector('._3a693'))) { //не более 60 лайков в час, а то блокировка
+	if (k > 50 || (!document.querySelector('._1bdSS'))) { //не более 60 лайков в час, а то блокировка
 		clearTimeout(timerId);
 	} else {
-		if ( document.querySelector('._l9yih span').innerHTML == "Нравится") {
- 			document.querySelector('._l9yih').click();//ставим лайк
+		if ( document.querySelector('.ptsdu')) {
+ 			document.querySelector('.ptsdu').click();//ставим лайк
  			k++; //увеличиваем счетчик
  		} 
- 		document.querySelector('._3a693').click();//перелистываем
+ 		document.querySelector('._1bdSS').click();//перелистываем
 		timerId = setTimeout (like, 1000 * Math.floor(Math.random() * 5 + 1));//для перестраховки интервал рандомный, можно настроить по-другому с любым интервалом
 	}
 }, 500);
 
- if ( document.querySelector('._l9yih span').innerHTML == "Нравится") {
- 	document.querySelector('._l9yih').click();//ставим лайк
+ if ( document.querySelector('.ptsdu')) {
+ 	document.querySelector('.ptsdu').click();//ставим лайк
  } else {
- 	document.querySelector('._3a693').click();//перелистываем
+ 	document.querySelector('._1bdSS').click();//перелистываем
  }
 
 //END
