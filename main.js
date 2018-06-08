@@ -55,13 +55,13 @@ window.scrollTo(0, 0);
 var n = 0;
 var k = 0;
 var timerId = setTimeout (function like(){
-	var len = document.querySelectorAll('.ptsdu').length;
-	if ( document.querySelectorAll('.ptsdu')[len - 1] ) {
-		document.querySelectorAll('.ptsdu')[len - 1].click();
+	var len = document.querySelectorAll('.coreSpriteHeartOpen').length;
+	if ( document.querySelectorAll('.coreSpriteHeartOpen')[len - 1] ) {
+		document.querySelectorAll('.coreSpriteHeartOpen')[len - 1].click();
 	}
 	window.scrollTo(0, n += 1000);
 	k++;
-	if (k > 10) { //не более 60 лайков в час, а то блокировка
+	if (k > 25) { //не более 60 лайков в час, а то блокировка
 		clearTimeout(timerId);
 	} else {
 	timerId = setTimeout (like, 500);
@@ -70,30 +70,30 @@ var timerId = setTimeout (function like(){
 
 //END
 
-// START (Обновлено 31.05.2018)
+// START (Обновлено 8.06.2018)
 // Description:
-// Instagram. Жестко лайкаем чью-нить страничку.
+// Instagram. Жестко лайкаем чью-нить страничку или выборку по тегу, например.
 // Usage:
 // Открываем нужный аккаунт, жмем на первую фотку, открываем консоль (F12->console) и вставляем следующий код:
 
  var k = 0;
  var timerId = setTimeout (function like() {	
-	if (k > 50 || (!document.querySelector('._1bdSS'))) { //не более 60 лайков в час, а то блокировка
+	if (k > 25 || (!document.querySelector('.coreSpriteRightPaginationArrow'))) { //не более 60 лайков в час, а то блокировка
 		clearTimeout(timerId);
 	} else {
-		if ( document.querySelector('.ptsdu')) {
- 			document.querySelector('.ptsdu').click();//ставим лайк
+		if ( document.querySelector('.coreSpriteHeartOpen')) {
+ 			document.querySelector('.coreSpriteHeartOpen').click();//ставим лайк
  			k++; //увеличиваем счетчик
  		} 
- 		document.querySelector('._1bdSS').click();//перелистываем
+ 		document.querySelector('.coreSpriteRightPaginationArrow').click();//перелистываем
 		timerId = setTimeout (like, 1000 * Math.floor(Math.random() * 5 + 1));//для перестраховки интервал рандомный, можно настроить по-другому с любым интервалом
 	}
 }, 500);
 
- if ( document.querySelector('.ptsdu')) {
- 	document.querySelector('.ptsdu').click();//ставим лайк
+ if ( document.querySelector('.coreSpriteHeartOpen')) {
+ 	document.querySelector('.coreSpriteHeartOpen').click();//ставим лайк
  } else {
- 	document.querySelector('._1bdSS').click();//перелистываем
- }
+ 	document.querySelector('.coreSpriteRightPaginationArrow').click();//перелистываем
+}
 
 //END
